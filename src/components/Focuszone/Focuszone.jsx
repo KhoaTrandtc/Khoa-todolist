@@ -1,7 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Focuszone.css";
+import Todoapp from "../Todo/Todoapp";
 
-const Focuszone = ({ todos }) => {
+const Focuszone = () => {
+  const [todos, setTodos] = useState([]);
+  const [hasTask, setHasTask] = useState(false);
+
+  const toggleCheck = (index) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo, i) =>
+        i === index ? { ...todo, checked: !todo.checked } : todo
+      );
+      return updatedTodos;
+    });
+  };
+
+  const deleteTodo = (index) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos];
+      updatedTodos.splice(index, 1);
+      return updatedTodos;
+    });
+    if (todos.length === 1) {
+      setHasTask(false);
+    }
+  };
+
+  const addTodo = (todo) => {
+    setTodos((prevTodos) => [...prevTodos, { text: todo, checked: false }]);
+  };
+
   const remainingTasks = todos.filter((todo) => !todo.checked).length;
   const completedTasks = todos.filter((todo) => todo.checked).length;
 
@@ -55,11 +83,19 @@ const Focuszone = ({ todos }) => {
 
   return (
     <>
-      <div className="container bg-light p-4 mt-5 rounded-3 shadow-lg">
+      <div className="container bg-light p-4 mt-1 rounded-3 shadow-lg">
         <h3 className="text-primary c-un fw-bold">Work to finish!</h3>
         {renderMessage()}
         <ul className="todoList list-group mt-3"></ul>
       </div>
+      <Todoapp
+        todos={todos}
+        hasTask={hasTask}
+        setHasTask={setHasTask}
+        toggleCheck={toggleCheck}
+        deleteTodo={deleteTodo}
+        addTodo={addTodo}
+      />
     </>
   );
 };

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./Timer.css";
 import "bootstrap-icons/font/bootstrap-icons.css" 
 
+
+
 const Timer = () => {
   const [timeLeft, setTimeLeft] = useState(0); // Initial time in seconds (5 minutes)
   const [running, setRunning] = useState(false);

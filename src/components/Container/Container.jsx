@@ -6,33 +6,8 @@ import Focuszone from "../Focuszone/Focuszone";
 import Timer from "../Timer/Timer";
 import Container1 from "../Container1/Container1";
 
-const Container = ({ activeStates, handleElementClick }) => {
-  const [todos, setTodos] = useState([]);
-  const [hasTask, setHasTask] = useState(false);
-
-  const toggleCheck = (index) => {
-    setTodos((prevTodos) => {
-      const updatedTodos = prevTodos.map((todo, i) =>
-        i === index ? { ...todo, checked: !todo.checked } : todo
-      );
-      return updatedTodos;
-    });
-  };
-
-  const deleteTodo = (index) => {
-    setTodos((prevTodos) => {
-      const updatedTodos = [...prevTodos];
-      updatedTodos.splice(index, 1);
-      return updatedTodos;
-    });
-    if (todos.length === 1) {
-      setHasTask(false);
-    }
-  };
-
-  const addTodo = (todo) => {
-    setTodos((prevTodos) => [...prevTodos, { text: todo, checked: false }]);
-  };
+const Container = ({ activeStates, handleElementClick, todos }) => {
+ 
   return (
     <div className="container w-50 pt-4 pb-5 container d-flex ">
       <Header
@@ -40,14 +15,7 @@ const Container = ({ activeStates, handleElementClick }) => {
         handleElementClick={handleElementClick}
       />
       <Container1 todos={todos} />
-      <Todoapp
-        todos={todos}
-        hasTask={hasTask}
-        setHasTask={setHasTask}
-        toggleCheck={toggleCheck}
-        deleteTodo={deleteTodo}
-        addTodo={addTodo}
-      />
+      
     </div>
   );
 };
