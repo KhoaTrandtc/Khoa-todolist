@@ -1,0 +1,175 @@
+.music-player {
+  text-align: center;
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cd-control {
+}
+
+.song-name {
+  position: absolute;
+  bottom: 42%;
+  right: 63.6%;
+}
+
+.song-control {
+  position: relative;
+}
+
+.song-controls {
+  position: absolute;
+  right: -2%;
+  bottom: 68%;
+}
+.volume-control {
+  position: absolute;
+  right: -3%;
+  bottom: -2.1%;
+}
+.music-range {
+  position: absolute;
+  right: 40%;
+  bottom: -15%;
+  width: 70%;
+}
+
+
+/* Add more styles as needed */
+
+.cd {
+  display: flex;
+  margin: auto;
+  width: 110px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+}
+
+/* rotate image */
+
+.btn-prev {
+  color: #666;
+  padding: 18px;
+}
+
+.btn-play {
+  color: #3498db;
+}
+.btn-next {
+  color: #666;
+  padding: 18px;
+}
+
+.btn-prev:hover {
+  cursor: pointer;
+}
+
+.margin-right {
+  margin-right: 40%;
+}
+.height {
+  height: 0;
+}
+
+.width-music {
+  width: 200.7px;
+}
+
+
+.progress-bar {
+  width: 100%; /* Set the progress bar width */
+  height: 2px; /* Set the height of the progress bar */
+  appearance: none; /* Remove default styling */
+  background-color: #ccc; /* Set the color of the track */
+}
+
+/* Style the progress value (blue line) */
+.progress-bar::-webkit-progress-value {
+  background-color: #3498db; /* Set the color of the progress value */
+}
+
+/* Hide the progress value text */
+.progress-bar::-webkit-progress-bar {
+  background-color: transparent; /* Hide the background of the progress bar */
+}
+
+/* Style the thumb */
+.seek-bar {
+  width: 100%; /* Set the width of the range input */
+  height: 10px; /* Set the height of the range input */
+  appearance: none; /* Remove default styling */
+  background-color: transparent; /* Set a transparent background */
+  transition: transform 0.2s ease-in-out;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  width: 10px; /* Set the width of the thumb */
+  height: 10px; /* Set the height of the thumb */
+  background-color: #3498db; /* Set the color of the thumb */
+  border-radius: 50%; /* Make the thumb round */
+  appearance: none; /* Remove default styling */
+  cursor: pointer; /* Show a pointer cursor when hovering over the thumb */
+  transform: translateY(-14.4px);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+/* Remove the blue outline when focused */
+.seek-bar:focus {
+  outline: none;
+}
+
+/* Show the thumb on hover */
+.music-range:hover .seek-bar::-webkit-slider-thumb {
+  display: block;
+}
+
+/* Hide the thumb when not hovering */
+.music-range .seek-bar::-webkit-slider-thumb {
+  display: none;
+}
+
+
+/* Style the volume bar */
+.volume-bar {
+  width: 60%; /* Set the width of the range input */
+  height: 2px; /* Set the height of the range input */
+  appearance: none; /* Remove default styling */
+  background-color: #ccc; /* Set a transparent background */
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(-4.6px);
+}
+
+.volume-bar::-webkit-slider-thumb {
+  width: 10px; /* Set the width of the thumb */
+  height: 10px; /* Set the height of the thumb */
+  background-color: #3498db; /* Set the color of the thumb */
+  border-radius: 50%; /* Make the thumb round */
+  appearance: none; /* Remove default styling */
+  cursor: pointer; /* Show a pointer cursor when hovering over the thumb */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Remove the blue outline when focused */
+.volume-bar:focus {
+  outline: none;
+}
+
+/* Show the thumb on hover */
+.volume-control:hover .volume-bar::-webkit-slider-thumb {
+  display: block;
+}
+
+/* Hide the thumb when not hovering */
+.volume-control .volume-bar::-webkit-slider-thumb {
+  display: none;
+}
