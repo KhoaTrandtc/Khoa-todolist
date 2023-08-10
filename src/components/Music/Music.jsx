@@ -13,6 +13,10 @@ import angelImage from "../../assets/image/angel.jpg";
 import comthruImage from "../../assets/image/comethru.jpg";
 import goldenhourImage from "../../assets/image/goldenhour.jpg";
 import whatitisImage from "../../assets/image/whatitis.jpg";
+
+
+
+
 import YoutubePlayer from "../YoutubePlayer/YoutubePlayer";
 
 const Music = () => {
@@ -30,7 +34,7 @@ const Music = () => {
       author: "Jeremy Zucker",
     },
     {
-      name: "Goldenhour",
+      name: " Goldenh...",
       audio: goldenhour,
       image: goldenhourImage,
       author: "JVKE",
