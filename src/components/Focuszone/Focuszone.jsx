@@ -39,7 +39,7 @@ const Focuszone = () => {
       return (
         <div className="container text-center bg-light shadow-lg p-4 mt-3 mb-3 rounded-2">
           <h5 className="text-dark fw-normal height-highest fw-semibold">
-            🤗 Anything you want to do today?
+            🤗 Anything you want to accomplish today?
           </h5>
           <p>Start by adding your todo list below</p>
         </div>
